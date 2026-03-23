@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tune4Kids – Musik für Kinder, Kontrolle für Eltern</title>
+  <meta name="description" content="Tune4Kids ist die kindersichere Spotify-App für Kinder von 2–10 Jahren. Eltern geben Musik frei – Kinder hören nur das Freigegebene." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        <span class="logo-icon">🎵</span>
+        <span class="logo-text">Tune<strong>4Kids</strong></span>
+      </a>
+      <nav class="navbar__links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">So funktioniert's</a>
+        <a href="#safety">Sicherheit</a>
+        <a href="#download" class="btn btn--nav">Jetzt starten</a>
+      </nav>
+      <button class="navbar__burger" id="burger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__bg-shapes">
+      <div class="shape shape--1"></div>
+      <div class="shape shape--2"></div>
+      <div class="shape shape--3"></div>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__text">
+        <div class="badge">✨ Spotify-powered · Kindersicher</div>
+        <h1>Musik, die<br /><span class="gradient-text">Kinder lieben.</span><br />Kontrolle, die<br /><span class="gradient-text">Eltern brauchen.</span></h1>
+        <p class="hero__subtitle">
+          Tune4Kids verbindet Spotify mit einem kindersicheren Modus. Du entscheidest, was dein Kind hört – und dein Kind kann es kaum erwarten, die nächste Musik freizuschalten.
+        </p>
+        <div class="hero__cta">
+          <a href="#download" class="btn btn--primary btn--lg">
+            <span>Kostenlos testen</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#how-it-works" class="btn btn--ghost btn--lg">Wie es funktioniert</a>
+        </div>
+        <div class="hero__trust">
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>
+            <span>Kein Autoplay</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">👨‍👩‍👧</span>
+            <span>Elternkontrolle</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⏱️</span>
+            <span>Zeitlimits</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="phone-mockup">
+          <div class="phone-mockup__screen">
+            <div class="app-ui">
+              <div class="app-ui__header">
+                <div class="app-ui__greeting">Hallo, Lena! 👋</div>
+                <div class="app-ui__subtitle">Was möchtest du hören?</div>
+              </div>
+              <div class="app-ui__tracks">
+                <div class="track-item track-item--active">
+                  <div class="track-item__art">🦁</div>
+                  <div class="track-item__info">
+                    <div class="track-item__name">Der König der Löwen</div>
+                    <div class="track-item__artist">Soundtrack</div>
+                  </div>
+                  <div class="track-item__playing">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                  </div>
+                </div>
+                <div class="track-item">
+                  <div class="track-item__art">🧁</div>
+                  <div class="track-item__info">
+                    <div class="track-item__name">Bibi Blocksberg</div>
+                    <div class="track-item__artist">Hörspiel</div>
+                  </div>
+                </div>
+                <div class="track-item">
+                  <div class="track-item__art">🚂</div>
+                  <div class="track-item__info">
+                    <div class="track-item__name">Thomas die Lok</div>
+                    <div class="track-item__artist">Kinderlieder</div>
+                  </div>
+                </div>
+              </div>
+              <div class="app-ui__qr-hint">
+                <span>📲</span>
+                <span>QR-Code scannen für neue Musik!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-badge floating-badge--1">
+          <span>🎧</span> Läuft gerade
+        </div>
+        <div class="floating-badge floating-badge--2">
+          <span>⏰</span> 45 Min. übrig
+        </div>
+        <div class="floating-badge floating-badge--3">
+          <span>✅</span> Freigegeben
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0V40Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge--purple">Features</div>
+        <h2>Alles, was du dir<br />für dein Kind wünschst</h2>
+        <p>Tune4Kids wurde mit einem klaren Ziel entwickelt: Kinder sollen Musik lieben – und Eltern sollen ruhig schlafen können.</p>
+      </div>
+      <div class="features__grid">
+
+        <div class="feature-card feature-card--highlight">
+          <div class="feature-card__icon">🎛️</div>
+          <h3>Vollständige Elternkontrolle</h3>
+          <p>Du gibst Musik, Hörbücher und Podcasts frei – und nur das. Dein Kind hört ausschließlich, was du erlaubt hast. Kein Zufall, keine Überraschungen.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">📱</div>
+          <h3>QR-Code Belohnungssystem</h3>
+          <p>Ähnlich wie die beliebten Toniebox-Figuren: Du erstellst QR-Karten für einzelne Alben oder Playlists. Dein Kind scannt den Code – und die Musik startet.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">⏱️</div>
+          <h3>Zeitlimits & Einschlaf-Timer</h3>
+          <p>Setze tägliche Zeitlimits für das Musikhören. Der Einschlaf-Timer stoppt die Musik automatisch – perfekt für die Gute-Nacht-Routine.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🔐</div>
+          <h3>Kiosk-Modus</h3>
+          <p>Die Kind-App ist komplett abgeriegelt. Kein Wechsel zu anderen Apps, kein Zugriff auf Spotify-Empfehlungen. Nur freigegebene Musik.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🎵</div>
+          <h3>Spotify-Bibliothek</h3>
+          <p>Greife auf Millionen von Kinderliedern, Hörspielen und Hörbüchern auf Spotify zu. Alles, was Spotify bietet – gefiltert für dein Kind.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">🛡️</div>
+          <h3>Kein Autoplay</h3>
+          <p>Nach Ende eines Titels stoppt die App. Keine algorithmischen Empfehlungen, kein endloses Weiterhören – Musik auf Abruf, nicht auf Autopilot.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="how-it-works__bg"></div>
+    <div class="container">
+      <div class="section-header section-header--light">
+        <div class="badge badge--white">So funktioniert's</div>
+        <h2>In 3 Schritten startklar</h2>
+        <p>Setup dauert wenige Minuten – dann läuft alles automatisch.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <div class="step__content">
+            <h3>Eltern-App einrichten</h3>
+            <p>Verbinde dein Spotify-Konto mit der Tune4Kids Eltern-App. Suche nach Liedern, Alben oder Playlists – und gib frei, was dein Kind hören darf.</p>
+          </div>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <div class="step__content">
+            <h3>QR-Karten erstellen</h3>
+            <p>Für Favoriten erstellst du QR-Karten – drucken, laminieren, fertig. Dein Kind scannt die Karte und die Musik startet sofort auf dem Kind-Gerät.</p>
+          </div>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <div class="step__content">
+            <h3>Kind genießt Musik</h3>
+            <p>Auf dem Gerät deines Kindes läuft die Kind-App im Kiosk-Modus. Nur freigegebene Inhalte, kein Ablenkungspotenzial – und du siehst jederzeit, was gehört wird.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="safety" id="safety">
+    <div class="container">
+      <div class="safety__inner">
+        <div class="safety__visual">
+          <div class="safety-shield">
+            <div class="safety-shield__icon">🛡️</div>
+            <div class="safety-shield__rings">
+              <div class="ring ring--1"></div>
+              <div class="ring ring--2"></div>
+              <div class="ring ring--3"></div>
+            </div>
+          </div>
+          <div class="safety-facts">
+            <div class="safety-fact">
+              <span class="safety-fact__check">✓</span>
+              <span>AES-256 Verschlüsselung</span>
+            </div>
+            <div class="safety-fact">
+              <span class="safety-fact__check">✓</span>
+              <span>Keine Werbung</span>
+            </div>
+            <div class="safety-fact">
+              <span class="safety-fact__check">✓</span>
+              <span>Keine Empfehlungsalgorithmen</span>
+            </div>
+            <div class="safety-fact">
+              <span class="safety-fact__check">✓</span>
+              <span>Kein In-App-Browser</span>
+            </div>
+            <div class="safety-fact">
+              <span class="safety-fact__check">✓</span>
+              <span>Kein Social-Media-Zugang</span>
+            </div>
+          </div>
+        </div>
+        <div class="safety__text">
+          <div class="badge badge--purple">Sicherheit</div>
+          <h2>Entwickelt für das Wohl deines Kindes</h2>
+          <p>Tune4Kids folgt dem Grundsatz: Was nicht ausdrücklich erlaubt ist, ist verboten. Jede Wiedergabe-Anfrage wird gegen deine persönliche Freigabeliste geprüft.</p>
+          <ul class="safety__list">
+            <li>
+              <strong>Strikte Account-Trennung:</strong> Das Eltern-Konto wird nur für die Musiksuche genutzt. Das Kind-Konto nur für die Wiedergabe. Tokens werden niemals gemischt.
+            </li>
+            <li>
+              <strong>Content-Whitelist:</strong> Dein Kind kann technisch gesehen nur abspielen, was in deiner Freigabeliste steht – nicht nur angezeigt, sondern serverseitig erzwungen.
+            </li>
+            <li>
+              <strong>Kein Autoplay:</strong> Nach jedem Titel stoppt die App. Kein algorithmisches Weiterschalten zu unbekannten Inhalten.
+            </li>
+          </ul>
+          <a href="#download" class="btn btn--primary">App jetzt testen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR SECTION -->
+  <section class="qr-section">
+    <div class="container">
+      <div class="qr-section__inner">
+        <div class="qr-section__text">
+          <div class="badge badge--coral">Das Highlight</div>
+          <h2>QR-Karten: Das physische Erlebnis bleibt</h2>
+          <p>
+            Kinder lieben es, Figuren auf die Toniebox zu stellen. Tune4Kids bringt dieses Gefühl auf jedes Gerät: Erstelle QR-Karten für Lieblingsalben, drucke sie aus – und dein Kind hält buchstäblich die Musik in den Händen.
+          </p>
+          <p>
+            Perfekt als Belohnungssystem: Neue Musik als Aufkleber, Karte oder Geschenk. Dein Kind scannt, freut sich, hört.
+          </p>
+        </div>
+        <div class="qr-section__visual">
+          <div class="qr-cards">
+            <div class="qr-card qr-card--1">
+              <div class="qr-card__art">🦁</div>
+              <div class="qr-card__qr">
+                <div class="qr-dots">
+                  <div class="qr-dot"></div><div class="qr-dot"></div><div class="qr-dot"></div>
+                  <div class="qr-dot qr-dot--lg"></div><div class="qr-dot"></div><div class="qr-dot qr-dot--lg"></div>
+                  <div class="qr-dot"></div><div class="qr-dot qr-dot--lg"></div><div class="qr-dot"></div>
+                </div>
+              </div>
+              <div class="qr-card__label">König der Löwen</div>
+            </div>
+            <div class="qr-card qr-card--2">
+              <div class="qr-card__art">🧚</div>
+              <div class="qr-card__qr">
+                <div class="qr-dots">
+                  <div class="qr-dot qr-dot--lg"></div><div class="qr-dot"></div><div class="qr-dot"></div>
+                  <div class="qr-dot"></div><div class="qr-dot qr-dot--lg"></div><div class="qr-dot"></div>
+                  <div class="qr-dot qr-dot--lg"></div><div class="qr-dot"></div><div class="qr-dot qr-dot--lg"></div>
+                </div>
+              </div>
+              <div class="qr-card__label">Bibi Blocksberg</div>
+            </div>
+            <div class="qr-card qr-card--3">
+              <div class="qr-card__art">🎶</div>
+              <div class="qr-card__qr">
+                <div class="qr-dots">
+                  <div class="qr-dot"></div><div class="qr-dot qr-dot--lg"></div><div class="qr-dot"></div>
+                  <div class="qr-dot qr-dot--lg"></div><div class="qr-dot"></div><div class="qr-dot"></div>
+                  <div class="qr-dot"></div><div class="qr-dot"></div><div class="qr-dot qr-dot--lg"></div>
+                </div>
+              </div>
+              <div class="qr-card__label">Kinderlieder Mix</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD / CTA -->
+  <section class="cta" id="download">
+    <div class="cta__bg-shapes">
+      <div class="cta-shape cta-shape--1"></div>
+      <div class="cta-shape cta-shape--2"></div>
+    </div>
+    <div class="container">
+      <div class="cta__inner">
+        <div class="cta__emoji">🎵</div>
+        <h2>Bereit für sicheres Musikhören?</h2>
+        <p>Tune4Kids ist für iOS und Android verfügbar. Verbinde dein Spotify Premium-Konto und starte heute.</p>
+        <div class="cta__buttons">
+          <a href="#" class="store-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div>
+              <div class="store-btn__label">Laden im</div>
+              <div class="store-btn__name">App Store</div>
+            </div>
+          </a>
+          <a href="#" class="store-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.36.6 1.24 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/></svg>
+            <div>
+              <div class="store-btn__label">Jetzt bei</div>
+              <div class="store-btn__name">Google Play</div>
+            </div>
+          </a>
+        </div>
+        <p class="cta__note">Benötigt Spotify Premium · Für iOS und Android</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="navbar__logo">
+          <span class="logo-icon">🎵</span>
+          <span class="logo-text">Tune<strong>4Kids</strong></span>
+        </a>
+        <p>Kindersichere Musik mit Spotify-Power.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Produkt</h4>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">So funktioniert's</a>
+          <a href="#safety">Sicherheit</a>
+        </div>
+        <div class="footer__col">
+          <h4>Rechtliches</h4>
+          <a href="#">Datenschutz</a>
+          <a href="#">Impressum</a>
+          <a href="#">AGB</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Tune4Kids. Alle Rechte vorbehalten. Nicht offiziell mit Spotify verbunden.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
