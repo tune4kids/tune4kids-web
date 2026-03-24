@@ -82,3 +82,125 @@ navStyle.textContent = `
   .navbar__links a.active:not(.btn) { color: var(--purple) !important; }
 `;
 document.head.appendChild(navStyle);
+
+// ── 250K Counter Campaign ──
+(function() {
+  'use strict';
+
+  // TODO: Replace with real API endpoint once backend is live
+  const COUNTER_API = '/api/counter';
+  const GOAL = 250000;
+  const ANIMATION_DURATION = 2000;
+  // Demo value for development — remove when API is connected
+  const DEMO_COUNT = 4721;
+
+  const counterValue = document.getElementById('counter-value');
+  const counterBar = document.getElementById('counter-bar');
+  const counterPercentage = document.getElementById('counter-percentage');
+  const counterLabel = document.getElementById('counter-label');
+
+  if (!counterValue || !counterBar || !counterPercentage) return;
+
+  function animateCount(start, end, duration) {
+    const startTime = performance.now();
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(start + (end - start) * eased);
+      counterValue.textContent = current.toLocaleString('de-DE');
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  function updateCounter(count) {
+    const percentage = Math.min((count / GOAL) * 100, 100);
+    const remaining = Math.max(GOAL - count, 0);
+
+    // Ab 80%: Countdown-Modus
+    if (counterLabel && percentage >= 80 && percentage < 100) {
+      animateCount(0, remaining, ANIMATION_DURATION);
+      counterLabel.textContent = 'Familien fehlen noch!';
+    } else {
+      animateCount(0, count, ANIMATION_DURATION);
+    }
+
+    // Fortschrittsbalken
+    setTimeout(function() {
+      counterBar.style.width = percentage + '%';
+    }, 100);
+
+    // Prozentzahl
+    if (percentage >= 100) {
+      counterPercentage.textContent = 'Geschafft! Danke an jede einzelne Familie.';
+      counterPercentage.style.fontSize = '1.1rem';
+    } else {
+      counterPercentage.textContent = Math.floor(percentage) + '% geschafft';
+    }
+
+    // Cache für Fallback
+    try {
+      localStorage.setItem('t4k_counter', JSON.stringify({ count: count, ts: Date.now() }));
+    } catch(e) {}
+  }
+
+  function fetchCounter() {
+    fetch(COUNTER_API)
+      .then(function(response) {
+        if (!response.ok) throw new Error('API error');
+        return response.json();
+      })
+      .then(function(data) {
+        updateCounter(data.count || 0);
+      })
+      .catch(function() {
+        // Fallback: localStorage, dann Demo-Wert
+        try {
+          var cached = JSON.parse(localStorage.getItem('t4k_counter'));
+          if (cached && cached.count) {
+            updateCounter(cached.count);
+            return;
+          }
+        } catch(e) {}
+        // Demo-Modus: Zeige Demo-Wert bis API steht
+        updateCounter(DEMO_COUNT);
+      });
+  }
+
+  // Counter laden wenn Section sichtbar wird
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        fetchCounter();
+        counterObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  var section = document.querySelector('.counter-campaign');
+  if (section) counterObserver.observe(section);
+
+  // Share-Buttons
+  var shareWA = document.getElementById('share-whatsapp');
+  var shareCopy = document.getElementById('share-copy');
+  var shareURL = window.location.origin + '/#250k';
+  var shareText = 'Tune4Kids braucht 250.000 Familien, um kindersicheres Musikhören mit Spotify zu ermöglichen. Registriere dich kostenlos: ';
+
+  if (shareWA) {
+    shareWA.href = 'https://wa.me/?text=' + encodeURIComponent(shareText + shareURL);
+    shareWA.target = '_blank';
+    shareWA.rel = 'noopener noreferrer';
+  }
+
+  if (shareCopy) {
+    shareCopy.addEventListener('click', function() {
+      navigator.clipboard.writeText(shareURL).then(function() {
+        shareCopy.querySelector('span').textContent = 'Kopiert!';
+        setTimeout(function() {
+          shareCopy.querySelector('span').textContent = 'Link kopieren';
+        }, 2000);
+      });
+    });
+  }
+})();
