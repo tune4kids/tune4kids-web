@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "date": "2026-03-24T18:59:19Z",
+  "files": {
+    "parent": "tune4kids-eltern.apk",
+    "child": "tune4kids-kind.apk"
+  }
+}
